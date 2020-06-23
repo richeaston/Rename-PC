@@ -47,7 +47,7 @@ Function RenamePC {
         $results.items.add("$Old_Name is online")
         $results.Items.Add("Checking New Name for conflicts")
         $tempVar = Get-ADComputer $NewName
-        if ($tempVar -eq $null) {
+        if ($null -eq $tempVar) {
             $Results.ForeColor ='green'
             $results.items.add("$NewName is free :)")
             Get-WMIObject Win32_BIOS -computername $Old_Name
